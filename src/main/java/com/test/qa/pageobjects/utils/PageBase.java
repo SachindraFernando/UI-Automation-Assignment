@@ -36,11 +36,10 @@ public class PageBase {
         switch (driverType) {
             case Constants.CHROME:
                 if(osType.equals(Constants.UBUNTU))
-                    System.setProperty("webdriver.chrome.driver", webDriverLocation +
-                            "chromedriver");
+                    System.setProperty("webdriver.chrome.driver", webDriverLocation + "chromedriver");
                 else
-                    System.setProperty("webdriver.chrome.driver", webDriverLocation +
-                            "chromedriver.exe");
+                    System.setProperty("webdriver.chrome.driver", webDriverLocation + "chromedriver.exe");
+
                 HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
                 chromePrefs.put("profile.default_content_settings.popups", 0);
                 chromePrefs.put("download.default_directory", downloadFilepath);
@@ -55,8 +54,8 @@ public class PageBase {
                 if(osType.equals(Constants.UBUNTU))
                     System.setProperty("webdriver.gecko.driver", webDriverLocation + "geckodriver");
                 else
-                    System.setProperty("webdriver.gecko.driver", webDriverLocation +
-                            "geckodriver.exe");
+                    System.setProperty("webdriver.gecko.driver", webDriverLocation + "geckodriver.exe");
+
                 HashMap<String, Object> fireFoxPrefs = new HashMap<String, Object>();
                 FirefoxOptions optionsFireFox = new FirefoxOptions();
                 optionsFireFox.addPreference("profile.default_content_settings.popups", 0);
@@ -85,24 +84,28 @@ public class PageBase {
     public static void closeDriver() {
         getDriver().quit();
     }
+    
     /**
      * Refresh web driver instances
      */
     public static void refreshDriver() {
         getDriver().navigate().refresh();
     }
+    
     /**
      * Navigate Back
      */
     public static void navigateBack() {
         getDriver().navigate().back();
     }
+
     /**
      * GetCurrent Window Details
      */
     public static String getCurrentWindow() {
         return getDriver().getWindowHandle();
     }
+
     /**
      * Navigate to Window By Title
      * @param windowName
@@ -110,7 +113,7 @@ public class PageBase {
     public static void navigateToWindow(String windowName) {
         getDriver().switchTo().window(windowName);
     }
-
+    
     /**
      * Static Wait
      */
@@ -121,14 +124,14 @@ public class PageBase {
             e.printStackTrace();
         }
     }
-
+    
     /**
      * Implicit Wait
      */
     public static void implicitWait(int seconds) {
         getDriver().manage().timeouts().implicitlyWait(seconds, TimeUnit.SECONDS);
     }
-
+    
     /**
      * Explicit Wait Clickable
      */
@@ -136,7 +139,7 @@ public class PageBase {
         WebDriverWait wait = new WebDriverWait(getDriver(), 10);
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
-
+    
     /**
      * Explicit Wait Visible
      */

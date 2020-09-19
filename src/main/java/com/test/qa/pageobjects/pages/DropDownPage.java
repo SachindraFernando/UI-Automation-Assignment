@@ -12,14 +12,19 @@ import com.test.qa.pageobjects.utils.PageBase;
  */
 public class DropDownPage extends PageBase {
     private static final Logger LOGGER = Logger.getLogger(DropDownPage.class);
+
     private static By dropDown = By.id("dropdown");
-    public static boolean isDropDownDisplayed(){ return getDriver().findElement(dropDown).isDisplayed();}
-    public static String getSelectedOption(){
+
+    public static boolean isDropDownDisplayed() {
+        return getDriver().findElement(dropDown).isDisplayed();
+    }
+
+    public static String getSelectedOption() {
         Select dropDownOption = new Select(getDriver().findElement(dropDown));
         return dropDownOption.getFirstSelectedOption().getText();
-
     }
-    public static void setDropDownOption(String option){
+
+    public static void setDropDownOption(String option) {
         Select dropDownOption = new Select(getDriver().findElement(dropDown));
         dropDownOption.selectByVisibleText(option);
     }

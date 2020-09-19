@@ -12,22 +12,23 @@ import com.test.qa.pageobjects.utils.PageBase;
 public class LoginSecurePage extends PageBase {
     private static final Logger LOGGER = Logger.getLogger(LoginSecurePage.class);
     private static By hdrLoginSecureTit = By.xpath("//h2");
-    private static By btnLogout = By.xpath("//a[@href='/logout']");
-    private static By alertMsg = By.id("flash");
+    private static By btnLogout=By.xpath("//a[@href='/logout']");
+    private static By alertMsg=By.id("flash");
 
     public static boolean isLoginSecurePageDisplayed() {
         return getDriver().findElement(hdrLoginSecureTit).isDisplayed();
     }
 
-    public static boolean isLoginAlertDisplayed(){
+    public static boolean isLoginAlertDisplayed() {
         return getDriver().findElement(alertMsg).isDisplayed();
     }
-    public static String getLoginAlertMsg(){
-        waiTillVisible(alertMsg,20);
+
+    public static String getLoginAlertMsg() {
+        waiTillVisible(alertMsg,10);
         return getDriver().findElement(alertMsg).getText();
     }
 
-    public static void clickLogout(){
+    public static void clickLogout() {
         getDriver().findElement(btnLogout).click();
     }
 }

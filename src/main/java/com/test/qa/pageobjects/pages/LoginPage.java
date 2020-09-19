@@ -15,30 +15,32 @@ public class LoginPage extends PageBase {
     private static By txtUsername = By.id("username");
     private static By txtPassword = By.id("password");
     private static By btnSubmit = By.xpath("//button[@type='submit']");
-    private static By alertMsg = By.id("flash");
+    private static By alertMsg=By.id("flash");
 
-    public static void setUsername(String username){
+    public static  void  setUsername(String username) {
         getDriver().findElement(txtUsername).sendKeys(username);
     }
 
-    public static void setPassword(String password){
+    public static  void  setPassword(String password) {
         getDriver().findElement(txtPassword).sendKeys(password);
     }
 
-    public static void clickSubmit(){
+    public static void clickSubmit() {
         getDriver().findElement(btnSubmit).click();
     }
 
-    public static boolean isLoginPageDisplayed(){
+    public static boolean isLoginPageDisplayed() {
         return getDriver().findElement(hdrLoginTit).isDisplayed();
     }
 
-    public static boolean isLoginAlertDisplayed(){
+    public static boolean isLoginAlertDisplayed() {
         return getDriver().findElement(alertMsg).isDisplayed();
     }
 
-    public static String getLoginAlertMsg(){
-        waiTillVisible(alertMsg,20);
-        return  getDriver().findElement(alertMsg).getText();
+    public static String getLoginAlertMsg() {
+        waiTillVisible(alertMsg,10);
+        return getDriver().findElement(alertMsg).getText();
     }
+
+
 }
