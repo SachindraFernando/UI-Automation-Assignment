@@ -29,7 +29,7 @@ public class UiAutomationTrainingBasicTest extends TestBase {
 		softAssert.assertTrue(HomePage.isHomePageDisplayed(), "Home Page is not Displayed");
 		HomePage.clickLink(Constants.AB_TEST_LINK);
 		ABTestPage.waitTillHeaderLoad();
-		softAssert.assertTrue(ABTestPage.isABTestPageDisplayed(), "Home Page is not Displayed");
+		softAssert.assertTrue(ABTestPage.isABTestPageDisplayed(), "ABT Page is not Displayed");
 		ABTestPage.navigateBack();
 		softAssert.assertTrue(HomePage.isHomePageDisplayed(), "Home Page is not Displayed");
 		softAssert.assertAll();
