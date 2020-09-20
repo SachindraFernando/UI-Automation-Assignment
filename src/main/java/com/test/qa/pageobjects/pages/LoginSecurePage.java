@@ -12,8 +12,8 @@ import com.test.qa.pageobjects.utils.PageBase;
 public class LoginSecurePage extends PageBase {
     private static final Logger LOGGER = Logger.getLogger(LoginSecurePage.class);
     private static By hdrLoginSecureTit = By.xpath("//h2");
-    private static By btnLogout=By.xpath("//a[@href='/logout']");
-    private static By alertMsg=By.id("flash");
+    private static By btnLogout = By.xpath("//a[@href='/logout']");
+    private static By alertMsg = By.xpath("//div[@id='flash']");
 
     public static boolean isLoginSecurePageDisplayed() {
         return getDriver().findElement(hdrLoginSecureTit).isDisplayed();

@@ -11,11 +11,11 @@ import com.test.qa.pageobjects.utils.PageBase;
  */
 public class LoginPage extends PageBase {
     private static final Logger LOGGER = Logger.getLogger(LoginPage.class);
-    private static By hdrLoginTit = By.xpath("//h2");
-    private static By txtUsername = By.id("username");
-    private static By txtPassword = By.id("password");
+    private static By hdrLoginTit = By.xpath("//h2[text()='Login Page']");
+    private static By txtUsername = By.xpath("//input[@id='username']");
+    private static By txtPassword = By.xpath("//input[@id='password']");
     private static By btnSubmit = By.xpath("//button[@type='submit']");
-    private static By alertMsg=By.id("flash");
+    private static By alertMsg=By.xpath("//div[@id='flash']");
 
     public static  void  setUsername(String username) {
         getDriver().findElement(txtUsername).sendKeys(username);

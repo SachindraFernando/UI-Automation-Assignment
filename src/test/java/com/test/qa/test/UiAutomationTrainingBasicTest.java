@@ -29,7 +29,7 @@ public class UiAutomationTrainingBasicTest extends TestBase {
 		softAssert.assertTrue(HomePage.isHomePageDisplayed(), "Home Page is not Displayed");
 		HomePage.clickLink(Constants.AB_TEST_LINK);
 		ABTestPage.waitTillHeaderLoad();
-		softAssert.assertTrue(ABTestPage.isABTestPageDisplayed(), "ABT Page is not Displayed");
+		softAssert.assertTrue(ABTestPage.isABTestPageDisplayed(), "ABTest Page is not Displayed");
 		ABTestPage.navigateBack();
 		softAssert.assertTrue(HomePage.isHomePageDisplayed(), "Home Page is not Displayed");
 		softAssert.assertAll();
@@ -165,11 +165,11 @@ public class UiAutomationTrainingBasicTest extends TestBase {
         LoginPage.setPassword(Constants.LOGIN_PASSWORD);
         LoginPage.clickSubmit();
         softAssert.assertTrue(LoginSecurePage.isLoginSecurePageDisplayed(),"LoginSecure Page is not Displayed");
-        softAssert.assertTrue(LoginSecurePage.isLoginAlertDisplayed(),"Login Alert is not Displayed");
+        softAssert.assertTrue(LoginSecurePage.isLoginAlertDisplayed(),"Login Alert Msg is not Displayed");
         softAssert.assertTrue(LoginSecurePage.getLoginAlertMsg().contains(Constants.LOGIN_SUCCESS_MSG),"Login Alert Msg is incorrect");
         LoginSecurePage.clickLogout();
         softAssert.assertTrue(LoginPage.isLoginPageDisplayed(),"Login Page is not Displayed");
-        softAssert.assertTrue(LoginPage.isLoginAlertDisplayed(),"Logout Alert is not Displayed");
+        softAssert.assertTrue(LoginPage.isLoginAlertDisplayed(),"Logout Alert Msg is not Displayed");
         softAssert.assertTrue(LoginPage.getLoginAlertMsg().contains(Constants.LOGOUT_SUCCESS_MSG),"Logout Alert Msg is incorrect");
         softAssert.assertAll();
 	}
@@ -193,7 +193,7 @@ public class UiAutomationTrainingBasicTest extends TestBase {
         LoginPage.setUsername(username);
         LoginPage.setPassword(password);
         LoginPage.clickSubmit();
-        softAssert.assertTrue(LoginPage.isLoginAlertDisplayed(),"Login Alert not Displayed");
+        softAssert.assertTrue(LoginPage.isLoginAlertDisplayed(),"Login Alert Msg is not Displayed");
         softAssert.assertTrue(LoginPage.getLoginAlertMsg().contains(Constants.LOGIN_INVALID_MSG),"Login Alert Msg is incorrect");
         softAssert.assertAll();
 
